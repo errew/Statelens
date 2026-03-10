@@ -24,6 +24,24 @@ This repository contains the experimental data and analysis code for our compreh
 - LP (Low Perturbation) → SP (Spectral Perturbation) → OSC (Oscillatory)
 - No phase transitions, smooth continuous crossover
 
+## Key Figures
+
+### Layer 2 Spectral Radius Analysis
+![Layer 2 Spectral Radius](validation_results/figures/layer2_spectral_radius_analysis.png)
+*Layer 2 Jacobian spectral radius across 7 models and 3 input distributions. All models show λ > 1 (expansion).*
+
+### Architecture Comparison
+![Architecture Comparison](validation_results/figures/architecture_comparison.png)
+*Mean spectral radius by attention architecture type (GQA, MHA, MQA).*
+
+### K-θ Monotonicity Validation
+![K-θ Validation](validation_results/figures/k_star_validation.png)
+*K-θ monotonicity law validated across multiple models.*
+
+### Cross-Architecture Temperature Analysis
+![Temperature Analysis](validation_results/figures/cross_architecture_temperature_analysis.png)
+*Temperature modulation capacity varies by architecture type.*
+
 ## Repository Structure
 
 ```

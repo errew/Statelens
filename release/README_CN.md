@@ -24,6 +24,24 @@
 - LP（低扰动区）→ SP（谱扰动区）→ OSC（振荡区）
 - 无相变，平滑连续过渡
 
+## 关键图表
+
+### Layer 2 谱半径分析
+![Layer 2 谱半径](validation_results/figures/layer2_spectral_radius_analysis.png)
+*7 个模型在 3 种输入分布下的 Layer 2 Jacobian 谱半径。所有模型显示 λ > 1（扩张）。*
+
+### 架构对比
+![架构对比](validation_results/figures/architecture_comparison.png)
+*按注意力架构类型的平均谱半径（GQA、MHA、MQA）。*
+
+### K-θ 单调性验证
+![K-θ 验证](validation_results/figures/k_star_validation.png)
+*K-θ 单调性定律在多模型上的验证。*
+
+### 跨架构温度分析
+![温度分析](validation_results/figures/cross_architecture_temperature_analysis.png)
+*温度调制能力因架构类型而异。*
+
 ## 仓库结构
 
 ```
