@@ -6,12 +6,12 @@
 
 ## 概述
 
-本仓库包含我们对 Transformer 内部动力学进行综合研究的实验数据和分析代码。我们提供的证据表明，Transformer 层作为**扩张系统**运行（λ ≈ 1.88 > 1），挑战了收缩表征学习的传统假设。
+本仓库包含我们对 Transformer 内部动力学进行综合研究的实验数据和分析代码。我们提供的证据表明，Transformer 层作为**扩张系统**运行（Layer 2 λ ≈ 1.7-1.8 > 1），挑战了收缩表征学习的传统假设。
 
 ## 核心发现
 
 ### 1. Transformer 层是扩张系统
-- 谱半径 λ ≈ 1.88 > 1，在 15+ 模型上验证
+- Layer 2 谱半径 λ ≈ 1.7-1.8 > 1，在 15+ 模型上验证
 - 稳定性来自 LayerNorm，而非权重收缩
 
 ### 2. K-θ 单调性定律
@@ -26,33 +26,56 @@
 - LP（低扰动区）→ SP（谱扰动区）→ OSC（振荡区）
 - 无相变，平滑连续过渡
 
+## 关键图表
+
+### Layer 2 谱半径分析
+![Layer 2 谱半径](validation_results/figures/layer2_spectral_radius_analysis.png)
+*7 个模型在 3 种输入分布下的 Layer 2 Jacobian 谱半径。所有模型显示 λ > 1（扩张）。*
+
+### 架构对比
+![架构对比](validation_results/figures/architecture_comparison.png)
+*按注意力架构类型的平均谱半径（GQA、MHA、MQA）。*
+
+### K-θ 单调性验证
+![K-θ 验证](validation_results/figures/k_star_validation.png)
+*K-θ 单调性定律在多模型上的验证。*
+
+### 跨架构温度分析
+![温度分析](validation_results/figures/cross_architecture_temperature_analysis.png)
+*温度调制能力因架构类型而异。*
+
 ## 仓库结构
 
-### 文档
-- [`docs/The_Transformer_Expansion_System.md`](docs/The_Transformer_Expansion_System.md) - 论文（英文）
-- [`docs/The_Transformer_Expansion_System_CN.md`](docs/The_Transformer_Expansion_System_CN.md) - 论文（中文）
-
-### 脚本
-- [`scripts/attention_temperature_enhanced_v1.py`](scripts/attention_temperature_enhanced_v1.py) - 温度实验
-- [`scripts/full_block_jacobian_spectrum_test.py`](scripts/full_block_jacobian_spectrum_test.py) - Jacobian 分析
-- [`scripts/calculate_si_all_models.py`](scripts/calculate_si_all_models.py) - SI 计算
-- [`scripts/band_sensitivity_analysis.py`](scripts/band_sensitivity_analysis.py) - 敏感性分析
-- [`scripts/pre_residual_control_experiment.py`](scripts/pre_residual_control_experiment.py) - 负对照实验
-- [`scripts/negative_control_experiment.py`](scripts/negative_control_experiment.py) - 负对照实验
-- [`scripts/tau_profile_likelihood.py`](scripts/tau_profile_likelihood.py) - 似然分析
-- [`scripts/analyze_k_star.py`](scripts/analyze_k_star.py) - K-θ 分析
-- [`scripts/decisive_random_subspace_experiment.py`](scripts/decisive_random_subspace_experiment.py) - 决定性实验
-- [`scripts/common_utils.py`](scripts/common_utils.py) - 工具函数
-
-### 验证结果
-- [`validation_results/enhanced_temperature_20260310_195631.json`](validation_results/enhanced_temperature_20260310_195631.json) - 温度数据
-- [`validation_results/summary.json`](validation_results/summary.json) - 对齐汇总
-- [`validation_results/pre_residual_control.json`](validation_results/pre_residual_control.json) - 控制实验
-- [`validation_results/negative_control_perturbation.json`](validation_results/negative_control_perturbation.json) - 控制实验
-- [`validation_results/k_star_validation_summary.json`](validation_results/k_star_validation_summary.json) - K-θ 验证
-- [`validation_results/profile_likelihood_summary.json`](validation_results/profile_likelihood_summary.json) - 似然汇总
-- [`validation_results/decisive_experiment_results.json`](validation_results/decisive_experiment_results.json) - 决定性实验
-- [`validation_results/figures/`](validation_results/figures/) - 可视化图片
+```
+statelens/
+├── docs/
+│   ├── The_Transformer_Expansion_System.md      # 论文（英文）
+│   └── The_Transformer_Expansion_System_CN.md   # 论文（中文）
+├── scripts/
+│   ├── attention_temperature_enhanced_v1.py     # 温度实验
+│   ├── full_block_jacobian_spectrum_test.py     # Jacobian 分析
+│   ├── calculate_si_all_models.py               # SI 计算
+│   ├── band_sensitivity_analysis.py             # 敏感性分析
+│   ├── pre_residual_control_experiment.py       # 负对照实验
+│   ├── negative_control_experiment.py           # 负对照实验
+│   ├── decisive_random_subspace_experiment.py   # 决定性实验
+│   └── tau_profile_likelihood.py                # 似然分析
+├── validation_results/
+│   ├── figures/                                # 可视化图表
+│   │   ├── layer2_spectral_radius_analysis.png
+│   │   ├── architecture_comparison.png
+│   │   ├── k_star_validation.png
+│   │   └── cross_architecture_temperature_analysis.png
+│   ├── layer2_jacobian_spectral_analysis.json   # Layer 2 谱数据
+│   ├── layer2_spectral_results_20260311.json    # 多模型结果
+│   ├── enhanced_temperature_20260310_195631.json # 温度数据
+│   ├── k_star_validation_summary.json           # K-θ 验证
+│   ├── decisive_experiment_results.json         # 决定性实验
+│   ├── pre_residual_control.json                # 对照实验
+│   ├── negative_control_perturbation.json       # 对照实验
+│   └── profile_likelihood_summary.json          # 似然汇总
+└── README.md
+```
 
 ## 研究模型
 
@@ -119,7 +142,7 @@ MIT License
 │  → 温度 β 控制混合时间 τ = τ_min + C/β                      │
 ├─────────────────────────────────────────────────────────────┤
 │  公理 2：嵌入决定可观测模式                                  │
-│  → 扩张常数 λ ≈ 1.88 定义表征增长                           │
+│  → 扩张常数 λ ≈ 1.7-1.8 (Layer 2) 定义表征增长              │
 │  → K-θ 单调性定律支配几何对齐                               │
 ├─────────────────────────────────────────────────────────────┤
 │  公理 3：Logits 反映过滤后的动力学                          │
