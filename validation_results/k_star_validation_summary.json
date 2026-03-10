@@ -1,0 +1,12 @@
+{
+  "n_data_points": 363,
+  "k_star_mean": 41.38375540357742,
+  "k_star_median": 40.387404537031834,
+  "k_star_std": 13.772975366847081,
+  "A_100_mean": 0.9270685209894155,
+  "A_100_median": 0.9317531333335007,
+  "correlation": -0.7615053544216933,
+  "n_low_saturation": 79,
+  "n_high_k_star": 79,
+  "diagnosis": "moderate"
+}

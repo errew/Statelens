@@ -1,0 +1,10 @@
+{
+  "n_layers_analyzed": 271,
+  "cv_mean": 0.7816062914847985,
+  "cv_median": 0.8065913187582127,
+  "correlation_mean": -0.928093267381212,
+  "correlation_median": -0.9737148370937051,
+  "abs_correlation_mean": 0.928093267381212,
+  "low_correlation_fraction": 0.04059040590405904,
+  "interpretation": "unstable"
+}
