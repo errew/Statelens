@@ -59,6 +59,11 @@ statelens/
 │   ├── decisive_random_subspace_experiment.py   # Causal validation
 │   └── tau_profile_likelihood.py                # Likelihood analysis
 ├── validation_results/
+│   ├── figures/                                # Visualization figures
+│   │   ├── layer2_spectral_radius_analysis.png
+│   │   ├── architecture_comparison.png
+│   │   ├── k_star_validation.png
+│   │   └── cross_architecture_temperature_analysis.png
 │   ├── layer2_jacobian_spectral_analysis.json   # Layer 2 spectral data
 │   ├── layer2_spectral_results_20260311.json    # Multi-model results
 │   ├── enhanced_temperature_20260310_195631.json # Temperature data
