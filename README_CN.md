@@ -1,5 +1,7 @@
 # StateLens: Transformer 扩张系统
 
+**[English Version](README.md)**
+
 > **注意力决定混合模式，嵌入决定可观测模式，Logits 反映过滤后的动力学。**
 
 ## 概述
@@ -30,20 +32,27 @@
 statelens/
 ├── docs/
 │   ├── The_Transformer_Expansion_System.md      # 论文（英文）
-│   ├── The_Transformer_Expansion_System_CN.md   # 论文（中文）
-│   ├── experiments/
-│   │   └── 01_VALIDATION_SUMMARY.md             # 实验汇总
-│   └── theory/
-│       └── 01_CORE_THEORY.md                    # 核心理论文档
+│   └── The_Transformer_Expansion_System_CN.md   # 论文（中文）
 ├── scripts/
 │   ├── attention_temperature_enhanced_v1.py     # 温度实验
 │   ├── full_block_jacobian_spectrum_test.py     # Jacobian 分析
 │   ├── calculate_si_all_models.py               # SI 计算
-│   └── ...
+│   ├── band_sensitivity_analysis.py             # 敏感性分析
+│   ├── pre_residual_control_experiment.py       # 负对照实验
+│   ├── negative_control_experiment.py           # 负对照实验
+│   ├── tau_profile_likelihood.py                # 似然分析
+│   ├── analyze_k_star.py                        # K-θ 分析
+│   ├── decisive_random_subspace_experiment.py   # 决定性实验
+│   └── common_utils.py                          # 工具函数
 ├── validation_results/
-│   ├── attention_temperature_enhanced/          # 温度数据
-│   ├── optimized_alignment/                     # 对齐数据
-│   └── ...
+│   ├── enhanced_temperature_20260310_195631.json
+│   ├── summary.json
+│   ├── pre_residual_control.json
+│   ├── negative_control_perturbation.json
+│   ├── k_star_validation_summary.json
+│   ├── profile_likelihood_summary.json
+│   ├── decisive_experiment_results.json
+│   └── figures/                                 # 可视化图片
 └── README.md
 ```
 
