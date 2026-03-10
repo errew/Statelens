@@ -170,11 +170,11 @@ $$h_{l+1} = \text{LayerNorm}(W_l \cdot h_l + \text{Attention}(h_l))$$
 3. **几何对齐（引导）**：K-θ 定律确保这种拉伸-折叠过程与 MLP 的预训练结构意图完美对齐。
 
 **图 1：多模型 Layer 2 谱半径分析**
-![Layer 2 谱半径](../validation_results/figures/layer2_spectral_radius_analysis.png)
+![Layer 2 谱半径](../../validation_results/figures/layer2_spectral_radius_analysis.png)
 *图 1：7 个模型在 3 种输入分布下的 Layer 2 Jacobian 谱半径。所有模型显示 λ > 1（扩张），紫色虚线表示论文参考值 λ ≈ 1.88。Qwen2.5-0.5B Normal 对话达到 λ = 1.72，与理论预测一致。*
 
 **图 2：架构对比**
-![架构对比](../validation_results/figures/architecture_comparison.png)
+![架构对比](../../validation_results/figures/architecture_comparison.png)
 *图 2：按注意力架构类型的平均谱半径。GQA（分组查询注意力）显示最高平均 λ ≈ 1.97，而 MHA（多头注意力）显示最稳定的 λ ≈ 1.55。误差条表示跨模型和输入类型的标准差。*
 
 ---
