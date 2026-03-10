@@ -71,6 +71,7 @@ credentials/
 archive/
 v7/
 v8/
+paper/
 
 # Debug/check scripts (not needed for release)
 scripts/debug_*.py
@@ -116,6 +117,35 @@ validation_results/training_evolution_self/checkpoints/
 
 # Web interface (not needed for release)
 web/
+index.html
+index.tsx
+package.json
 
 # Large files - model cache and checkpoints
 cache/
+
+# Duplicate/backup directories
+scripts - 副本/
+phi3_model/
+openai/
+tests/
+comfyui_StateLens/
+
+# Root level files not needed
+*.png
+!validation_results/**/*.png
+.env.local
+.gitattributes
+.trae/
+metadata.json
+pyproject.toml
+requirements.txt
+__init__.py
+create_release.sh
+debug_angle.py
+examples/
+CORE_FILES.txt
+RELEASE_GUIDE.md
+RESEARCH_PROGRESS.md
+StateLens v2–v4 演化路线评估.md
+ChatGPT Image*.png
