@@ -160,9 +160,13 @@ We test the last token because:
 
 **Implication**: Transformers do not stabilize by naturally contracting information. Instead, they operate in a "controlled expansive" regime. The expansion (λ > 1) enriches the representation capacity, while LayerNorm acts as a geometric spherical projection to prevent numerical explosion. This explains the absolute necessity of LayerNorm in deep Transformer convergence and the capacity of the residual stream to act as a lossless accumulating memory manifold.
 
-**Figure 1: Jacobian Spectrum Analysis**
-![Multi-Model Jacobian Spectrum](../validation_results/figures/multi_model_full_block_jacobian.png)
-*Figure 1: Jacobian spectral radius distribution across multiple models, all showing λ > 1, confirming the expansive dynamics hypothesis.*
+**Figure 1: Multi-Model Layer 2 Spectral Radius Analysis**
+![Layer 2 Spectral Radius](../validation_results/figures/layer2_spectral_radius_analysis.png)
+*Figure 1: Layer 2 Jacobian spectral radius across 7 models and 3 input distributions. All models show λ > 1 (expansion), with the purple dashed line indicating the paper's reference value λ ≈ 1.88. Qwen2.5-0.5B Normal dialogue achieves λ = 1.72, consistent with the theoretical prediction.*
+
+**Figure 2: Architecture Comparison**
+![Architecture Comparison](../validation_results/figures/architecture_comparison.png)
+*Figure 2: Mean spectral radius by attention architecture type. GQA (Grouped Query Attention) shows the highest mean λ ≈ 1.97, while MHA (Multi-Head Attention) shows the most stable λ ≈ 1.55. The error bars indicate standard deviation across models and input types.*
 
 ### 2.2 The K-
 
