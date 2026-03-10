@@ -92,7 +92,7 @@ statelens/
 ### 环境要求
 
 ```bash
-pip install torch transformers numpy scipy matplotlib
+pip install torch>=2.0 transformers>=4.30 numpy scipy matplotlib
 ```
 
 ### 运行实验
@@ -104,6 +104,38 @@ python scripts/attention_temperature_enhanced_v1.py
 # 示例：Jacobian 谱分析
 python scripts/full_block_jacobian_spectrum_test.py
 ```
+
+## 脚本说明
+
+### 核心实验
+
+| 脚本 | 功能 | 输出 |
+|:-----|:-----|:-----|
+| `full_block_jacobian_spectrum_test.py` | 计算 Transformer 块的 Jacobian 谱半径 | `layer2_jacobian_spectral_analysis.json` |
+| `attention_temperature_enhanced_v1.py` | 温度调制实验（τ = τ_min + C/β） | `enhanced_temperature_*.json` |
+| `calculate_si_all_models.py` | 计算所有模型的稳定性指数（SI） | 各层 SI 指标 |
+
+### 验证实验
+
+| 脚本 | 功能 | 输出 |
+|:-----|:-----|:-----|
+| `band_sensitivity_analysis.py` | K-θ 单调性验证（跨 K 带宽） | `k_star_validation_summary.json` |
+| `tau_profile_likelihood.py` | τ 估计的轮廓似然分析 | `profile_likelihood_summary.json` |
+| `decisive_random_subspace_experiment.py` | 因果验证：对齐崩塌测试 | `decisive_experiment_results.json` |
+
+### 对照实验
+
+| 脚本 | 功能 | 输出 |
+|:-----|:-----|:-----|
+| `pre_residual_control_experiment.py` | Pre/Post 残差测量对照 | `pre_residual_control.json` |
+| `negative_control_experiment.py` | W_gate vs W_down 扰动对照 | `negative_control_perturbation.json` |
+
+### 推荐运行顺序
+
+1. **Jacobian 分析** → `full_block_jacobian_spectrum_test.py`
+2. **温度调制** → `attention_temperature_enhanced_v1.py`
+3. **K-θ 验证** → `band_sensitivity_analysis.py`
+4. **对照实验** → `pre_residual_control_experiment.py`, `negative_control_experiment.py`
 
 ## 核心指标
 
