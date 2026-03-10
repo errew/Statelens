@@ -24,7 +24,7 @@ Through extensive experimental physics applied to the hidden state dynamics of o
 
 3. **Geometric Alignment Laws:** Representation evolution is governed by precise, quantifiable angular metrics.
 
-4. **Architecture-Dependent Dynamics:** We discover a profound asymmetry in temperature modulation capacity across MHA, GQA, and MQA architectures.
+4. **Architecture-Dependent Thermodynamics:** We discover a profound asymmetry in temperature modulation capacity across MHA, GQA, and MQA architectures.
 
 ### 1.3 The Three-Axiom Framework
 
@@ -51,10 +51,6 @@ We organize our empirical discoveries into a unified macroscopic framework:
 
 **Finding**: The Jacobian spectral radius of Transformer layers consistently evaluates to **λ ≈ 1.88 > 1** across multiple families at scale.
 
-![Multi-Model Jacobian Spectrum Analysis](../validation_results/figures/multi_model_full_block_jacobian.png)
-
-*Figure 1: Jacobian spectral radius across multiple models. All models exhibit λ ≈ 1.88 > 1, confirming the expansive nature of Transformer layers.*
-
 | Model | Architecture | λ (Spectral Radius) | Dynamical Regime |
 |:------|:-------------|:--------------------|:-----------------|
 | Qwen2.5-0.5B | GQA | 1.87 | Expansive |
@@ -65,13 +61,13 @@ We organize our empirical discoveries into a unified macroscopic framework:
 
 **Implication**: Transformers do not stabilize by naturally contracting information. Instead, they operate in a "controlled expansive" regime. The expansion (λ > 1) enriches the representation capacity, while LayerNorm acts as a geometric spherical projection to prevent numerical explosion. This explains the absolute necessity of LayerNorm in deep Transformer convergence and the capacity of the residual stream to act as a lossless accumulating memory manifold.
 
+**Figure 1: Multi-Model Jacobian Spectrum Analysis**
+![Multi-Model Jacobian Spectrum](../validation_results/figures/multi_model_full_block_jacobian.png)
+*Figure 1: Jacobian spectral radius across multiple models. All models exhibit λ ≈ 1.88 > 1, confirming the expansive nature of Transformer layers.*
+
 ### 2.2 The K-θ Monotonicity Law
 
 **Finding**: The alignment angle θ_k between the principal components of the MLP weights and the activation subspace strictly monotonically decreases with the principal dimension K.
-
-![K-θ Validation](../validation_results/figures/k_star_validation.png)
-
-*Figure 2: K-θ monotonicity law validation. The alignment angle decreases monotonically with K, following the exponential saturation curve.*
 
 **Mathematical Formulation**:
 ```
@@ -80,13 +76,13 @@ cos(θ_k) = c_0 + c_1(1 - e^(-k/τ))
 
 Where τ is the characteristic **mixing time**, quantifying how rapidly the activation manifold aligns with the preferred geometric directions encoded in the MLP weights. Validated across 15 models (for K ∈ [1, 512]), this exponential saturation curve holds with zero observed exceptions.
 
+**Figure 2: K-θ Validation**
+![K-θ Validation](../validation_results/figures/k_star_validation.png)
+*Figure 2: K-θ monotonicity law validation. The alignment angle decreases monotonically with K, following the exponential saturation curve.*
+
 ### 2.3 Temperature Modulation: τ = τ_min + C/β
 
 **Finding**: The mixing time τ follows a precise inverse-temperature physical law, yielding a major discovery regarding the limits of specific attention architectures.
-
-![Cross-Architecture Temperature Analysis](../validation_results/figures/cross_architecture_temperature_analysis.png)
-
-*Figure 3: Temperature modulation across different attention architectures. MHA shows strong response (C ≈ 27), GQA shows moderate response (C ≈ 4), while MQA shows near-zero response (C ≈ 0).*
 
 | Architecture | Representative Model | τ_min | Constant C | R² | Modulation Capacity |
 |:-------------|:---------------------|:------|:-----------|:---|:--------------------|
@@ -94,19 +90,23 @@ Where τ is the characteristic **mixing time**, quantifying how rapidly the acti
 | GQA | Qwen2.5-1.5B | 43.46 | 4.27 | 0.527 | ✅ Moderate |
 | MQA | gemma-2b | 41.67 | ≈0 | -0.16 | ❌ None |
 
-![Entropy vs Temperature](../validation_results/figures/entropy_vs_temperature.png)
-
-*Figure 4: Entropy-temperature relationship across architectures, showing the geometric basis for temperature modulation capacity.*
+**Figure 3: Cross-Architecture Temperature Analysis**
+![Cross-Architecture Temperature Analysis](../validation_results/figures/cross_architecture_temperature_analysis.png)
+*Figure 3: Temperature modulation across different attention architectures. MHA shows strong response (C ≈ 27), GQA shows moderate response (C ≈ 4), while MQA shows near-zero response (C ≈ 0).*
 
 **The Isotropic Geometric Trap in MQA**:
 Our most surprising finding is that MQA architectures (e.g., Gemma-2b) exhibit near-zero temperature responsiveness (C ≈ 0). Cross-validation with geometric analysis reveals that MQA operates in an **isotropic representational geometry** (mean angle θ_min ≈ 71.85°). Without a dominant directional gradient in the attention space, the global temperature scalar β loses its structural mechanism to compress or expand the manifold.
+
+**Figure 4: Entropy vs Temperature**
+![Entropy vs Temperature](../validation_results/figures/entropy_vs_temperature.png)
+*Figure 4: Entropy-temperature relationship across architectures, showing the geometric basis for temperature modulation capacity.*
 
 ### 2.4 SI Classification: Continuous Spectrum (No Phase Transitions)
 
 **Finding**: By mapping the Stability Index (SI) across depth, we categorize representation states not into discrete phases, but across a continuous topological spectrum.
 
+**Figure 5: Spectral Energy Comparison**
 ![Spectral Energy Comparison](../validation_results/figures/spectral_energy_comparison.png)
-
 *Figure 5: Spectral energy distribution across layers, showing the continuous transition from LP to SP to OSC regimes.*
 
 | Regime | SI Bound | Dynamical Characteristics |
@@ -141,6 +141,10 @@ To establish the robustness of our findings, we conducted three critical negativ
 | Top-1 Prediction Consistency | — | 100% |
 
 **Conclusion**: Alignment can be destroyed while preserving function, proving that **alignment is NOT a functional byproduct** but an independent causal structural variable.
+
+**Figure 6: Alignment Collapse with Behavioral Preservation (TEST_008)**
+![Alignment Collapse TEST_008](../validation_results/figures/alignment_collapse_test008.png)
+*Figure 6 shows the layer-wise alignment collapse experiment. Principal angle increases from 66.69° to 85.76° (near orthogonal) while functional change remains <0.4%, demonstrating the decoupling of geometric alignment from model function.*
 
 **Experiment 3: W_gate vs W_down Perturbation**
 
