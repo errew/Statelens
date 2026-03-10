@@ -71,3 +71,46 @@ archive/
 v7/
 v8/
 paper/
+
+# Debug/check scripts (not needed for release)
+scripts/debug_*.py
+scripts/check_*.py
+scripts/analyze_*.py
+scripts/test_*.py
+scripts/verify_*.py
+scripts/inspect_*.py
+scripts/compare_*.py
+scripts/measure_*.py
+scripts/run_*.py
+scripts/plot_*.py
+scripts/scan_*.py
+scripts/find_*.py
+scripts/generate_*.py
+scripts/create_*.py
+scripts/extract_*.py
+scripts/compute_*.py
+scripts/visualize_*.py
+scripts/validate_*.py
+scripts/visualize_entropy_temperature.py
+scripts/convert_md_to_pdf.py
+
+# Redundant experiment data (keep only latest)
+validation_results/attention_temperature_enhanced/enhanced_temperature_20260310_191622.json
+validation_results/attention_temperature_enhanced/enhanced_temperature_20260310_184135.json
+validation_results/attention_temperature_enhanced/enhanced_temperature_20260310_181640.json
+validation_results/attention_temperature_enhanced/enhanced_temperature_20260310_172719.json
+validation_results/attention_temperature_enhanced/enhanced_temperature_20260310_152426.json
+validation_results/attention_temperature_enhanced/enhanced_temperature_20260310_145530.json
+validation_results/attention_temperature/*.json
+
+# Large/redundant data directories
+validation_results/pretrained_vs_random/
+validation_results/training_experiments/
+validation_results/mock_model_experiments/
+validation_results/archive/
+validation_results/v6_*.json
+validation_results/all_model_archive.json
+validation_results/small_model_archive.json
+
+# Web interface (not needed for release)
+web/
