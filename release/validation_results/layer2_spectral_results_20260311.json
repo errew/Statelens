@@ -1,0 +1,135 @@
+{
+  "Qwen2.5-0.5B": {
+    "model_name": "Qwen2.5-0.5B",
+    "architecture": "GQA",
+    "num_layers": 24,
+    "tested_layers": [
+      2
+    ],
+    "spectra": {
+      "High Logic": [
+        1.5779100044405518
+      ],
+      "High Noise": [
+        2.219196498422071
+      ],
+      "Normal": [
+        1.7178034904488948
+      ]
+    }
+  },
+  "Qwen2.5-1.5B": {
+    "model_name": "Qwen2.5-1.5B",
+    "architecture": "GQA",
+    "num_layers": 28,
+    "tested_layers": [
+      2
+    ],
+    "spectra": {
+      "High Logic": [
+        2.599187553308969
+      ],
+      "High Noise": [
+        2.8163922507008423
+      ],
+      "Normal": [
+        2.451163174338225
+      ]
+    }
+  },
+  "gpt2": {
+    "model_name": "gpt2",
+    "architecture": "MHA",
+    "num_layers": 12,
+    "tested_layers": [
+      2
+    ],
+    "spectra": {
+      "High Logic": [
+        1.481004345046202
+      ],
+      "High Noise": [
+        1.5597289799690381
+      ],
+      "Normal": [
+        1.6261523796501764
+      ]
+    }
+  },
+  "distilgpt2": {
+    "model_name": "distilgpt2",
+    "architecture": "MHA",
+    "num_layers": 6,
+    "tested_layers": [
+      2
+    ],
+    "spectra": {
+      "High Logic": [
+        1.4361923556310754
+      ],
+      "High Noise": [
+        1.4465953418783397
+      ],
+      "Normal": [
+        1.8016361917504304
+      ]
+    }
+  },
+  "gemma-3-270m-it": {
+    "model_name": "gemma-3-270m-it",
+    "architecture": "MQA",
+    "num_layers": 18,
+    "tested_layers": [
+      2
+    ],
+    "spectra": {
+      "High Logic": [
+        1.7485641538345345
+      ],
+      "High Noise": [
+        3.56273191970634
+      ],
+      "Normal": [
+        2.590839168248259
+      ]
+    }
+  },
+  "pythia-410m": {
+    "model_name": "pythia-410m",
+    "architecture": "MHA",
+    "num_layers": 24,
+    "tested_layers": [
+      2
+    ],
+    "spectra": {
+      "High Logic": [
+        1.640248686923076
+      ],
+      "High Noise": [
+        1.5131031833498745
+      ],
+      "Normal": [
+        1.43850624549192
+      ]
+    }
+  },
+  "DeepSeek-R1-Distill-Qwen-1.5B": {
+    "model_name": "DeepSeek-R1-Distill-Qwen-1.5B",
+    "architecture": "GQA",
+    "num_layers": 28,
+    "tested_layers": [
+      2
+    ],
+    "spectra": {
+      "High Logic": [
+        1.325721650674147
+      ],
+      "High Noise": [
+        1.553922833448567
+      ],
+      "Normal": [
+        1.4368763988703392
+      ]
+    }
+  }
+}
