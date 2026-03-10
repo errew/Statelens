@@ -1,5 +1,7 @@
 # StateLens: The Transformer Expansion System
 
+**[中文版 (Chinese Version)](README_CN.md)**
+
 > **Attention determines mixing modes, embedding determines observable modes, logits reflect filtered dynamics.**
 
 ## Overview
@@ -30,20 +32,27 @@ This repository contains the experimental data and analysis code for our compreh
 statelens/
 ├── docs/
 │   ├── The_Transformer_Expansion_System.md      # Paper (English)
-│   ├── The_Transformer_Expansion_System_CN.md   # Paper (Chinese)
-│   ├── experiments/
-│   │   └── 01_VALIDATION_SUMMARY.md             # Experiment summary
-│   └── theory/
-│       └── 01_CORE_THEORY.md                    # Core theory document
+│   └── The_Transformer_Expansion_System_CN.md   # Paper (Chinese)
 ├── scripts/
 │   ├── attention_temperature_enhanced_v1.py     # Temperature experiment
 │   ├── full_block_jacobian_spectrum_test.py     # Jacobian analysis
 │   ├── calculate_si_all_models.py               # SI calculation
-│   └── ...
+│   ├── band_sensitivity_analysis.py             # Sensitivity analysis
+│   ├── pre_residual_control_experiment.py       # Negative control
+│   ├── negative_control_experiment.py           # Negative control
+│   ├── tau_profile_likelihood.py                # Likelihood analysis
+│   ├── analyze_k_star.py                        # K-θ analysis
+│   ├── decisive_random_subspace_experiment.py   # Decisive experiment
+│   └── common_utils.py                          # Utility functions
 ├── validation_results/
-│   ├── attention_temperature_enhanced/          # Temperature data
-│   ├── optimized_alignment/                     # Alignment data
-│   └── ...
+│   ├── enhanced_temperature_20260310_195631.json
+│   ├── summary.json
+│   ├── pre_residual_control.json
+│   ├── negative_control_perturbation.json
+│   ├── k_star_validation_summary.json
+│   ├── profile_likelihood_summary.json
+│   ├── decisive_experiment_results.json
+│   └── figures/                                 # Visualization figures
 └── README.md
 ```
 
