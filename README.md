@@ -31,29 +31,30 @@ This repository contains the experimental data and analysis code for our compreh
 ```
 statelens/
 ├── docs/
-│   ├── The_Transformer_Expansion_System.md      # Paper (English)
-│   └── The_Transformer_Expansion_System_CN.md   # Paper (Chinese)
+│   ├── [The_Transformer_Expansion_System.md](docs/The_Transformer_Expansion_System.md)
+│   └── [The_Transformer_Expansion_System_CN.md](docs/The_Transformer_Expansion_System_CN.md)
 ├── scripts/
-│   ├── attention_temperature_enhanced_v1.py     # Temperature experiment
-│   ├── full_block_jacobian_spectrum_test.py     # Jacobian analysis
-│   ├── calculate_si_all_models.py               # SI calculation
-│   ├── band_sensitivity_analysis.py             # Sensitivity analysis
-│   ├── pre_residual_control_experiment.py       # Negative control
-│   ├── negative_control_experiment.py           # Negative control
-│   ├── tau_profile_likelihood.py                # Likelihood analysis
-│   ├── analyze_k_star.py                        # K-θ analysis
-│   ├── decisive_random_subspace_experiment.py   # Decisive experiment
-│   └── common_utils.py                          # Utility functions
+│   ├── [attention_temperature_enhanced_v1.py](scripts/attention_temperature_enhanced_v1.py)
+│   ├── [full_block_jacobian_spectrum_test.py](scripts/full_block_jacobian_spectrum_test.py)
+│   ├── [calculate_si_all_models.py](scripts/calculate_si_all_models.py)
+│   ├── [band_sensitivity_analysis.py](scripts/band_sensitivity_analysis.py)
+│   ├── [pre_residual_control_experiment.py](scripts/pre_residual_control_experiment.py)
+│   ├── [negative_control_experiment.py](scripts/negative_control_experiment.py)
+│   ├── [tau_profile_likelihood.py](scripts/tau_profile_likelihood.py)
+│   ├── [analyze_k_star.py](scripts/analyze_k_star.py)
+│   ├── [decisive_random_subspace_experiment.py](scripts/decisive_random_subspace_experiment.py)
+│   └── [common_utils.py](scripts/common_utils.py)
 ├── validation_results/
-│   ├── enhanced_temperature_20260310_195631.json
-│   ├── summary.json
-│   ├── pre_residual_control.json
-│   ├── negative_control_perturbation.json
-│   ├── k_star_validation_summary.json
-│   ├── profile_likelihood_summary.json
-│   ├── decisive_experiment_results.json
-│   └── figures/                                 # Visualization figures
-└── README.md
+│   ├── [enhanced_temperature_20260310_195631.json](validation_results/enhanced_temperature_20260310_195631.json)
+│   ├── [summary.json](validation_results/summary.json)
+│   ├── [pre_residual_control.json](validation_results/pre_residual_control.json)
+│   ├── [negative_control_perturbation.json](validation_results/negative_control_perturbation.json)
+│   ├── [k_star_validation_summary.json](validation_results/k_star_validation_summary.json)
+│   ├── [profile_likelihood_summary.json](validation_results/profile_likelihood_summary.json)
+│   ├── [decisive_experiment_results.json](validation_results/decisive_experiment_results.json)
+│   └── [figures/](validation_results/figures/)
+├── [README.md](README.md)
+└── [README_CN.md](README_CN.md)
 ```
 
 ## Models Studied
