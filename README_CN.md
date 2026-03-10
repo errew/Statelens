@@ -31,29 +31,30 @@
 ```
 statelens/
 ├── docs/
-│   ├── The_Transformer_Expansion_System.md      # 论文（英文）
-│   └── The_Transformer_Expansion_System_CN.md   # 论文（中文）
+│   ├── [The_Transformer_Expansion_System.md](docs/The_Transformer_Expansion_System.md)
+│   └── [The_Transformer_Expansion_System_CN.md](docs/The_Transformer_Expansion_System_CN.md)
 ├── scripts/
-│   ├── attention_temperature_enhanced_v1.py     # 温度实验
-│   ├── full_block_jacobian_spectrum_test.py     # Jacobian 分析
-│   ├── calculate_si_all_models.py               # SI 计算
-│   ├── band_sensitivity_analysis.py             # 敏感性分析
-│   ├── pre_residual_control_experiment.py       # 负对照实验
-│   ├── negative_control_experiment.py           # 负对照实验
-│   ├── tau_profile_likelihood.py                # 似然分析
-│   ├── analyze_k_star.py                        # K-θ 分析
-│   ├── decisive_random_subspace_experiment.py   # 决定性实验
-│   └── common_utils.py                          # 工具函数
+│   ├── [attention_temperature_enhanced_v1.py](scripts/attention_temperature_enhanced_v1.py)
+│   ├── [full_block_jacobian_spectrum_test.py](scripts/full_block_jacobian_spectrum_test.py)
+│   ├── [calculate_si_all_models.py](scripts/calculate_si_all_models.py)
+│   ├── [band_sensitivity_analysis.py](scripts/band_sensitivity_analysis.py)
+│   ├── [pre_residual_control_experiment.py](scripts/pre_residual_control_experiment.py)
+│   ├── [negative_control_experiment.py](scripts/negative_control_experiment.py)
+│   ├── [tau_profile_likelihood.py](scripts/tau_profile_likelihood.py)
+│   ├── [analyze_k_star.py](scripts/analyze_k_star.py)
+│   ├── [decisive_random_subspace_experiment.py](scripts/decisive_random_subspace_experiment.py)
+│   └── [common_utils.py](scripts/common_utils.py)
 ├── validation_results/
-│   ├── enhanced_temperature_20260310_195631.json
-│   ├── summary.json
-│   ├── pre_residual_control.json
-│   ├── negative_control_perturbation.json
-│   ├── k_star_validation_summary.json
-│   ├── profile_likelihood_summary.json
-│   ├── decisive_experiment_results.json
-│   └── figures/                                 # 可视化图片
-└── README.md
+│   ├── [enhanced_temperature_20260310_195631.json](validation_results/enhanced_temperature_20260310_195631.json)
+│   ├── [summary.json](validation_results/summary.json)
+│   ├── [pre_residual_control.json](validation_results/pre_residual_control.json)
+│   ├── [negative_control_perturbation.json](validation_results/negative_control_perturbation.json)
+│   ├── [k_star_validation_summary.json](validation_results/k_star_validation_summary.json)
+│   ├── [profile_likelihood_summary.json](validation_results/profile_likelihood_summary.json)
+│   ├── [decisive_experiment_results.json](validation_results/decisive_experiment_results.json)
+│   └── [figures/](validation_results/figures/)
+├── [README.md](README.md)
+└── [README_CN.md](README_CN.md)
 ```
 
 ## 研究模型
