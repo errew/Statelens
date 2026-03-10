@@ -41,6 +41,7 @@ models/
 *.bin
 *.safetensors
 *.gguf
+*.pt
 
 # Node modules
 node_modules/
@@ -70,7 +71,6 @@ credentials/
 archive/
 v7/
 v8/
-paper/
 
 # Debug/check scripts (not needed for release)
 scripts/debug_*.py
@@ -111,6 +111,11 @@ validation_results/archive/
 validation_results/v6_*.json
 validation_results/all_model_archive.json
 validation_results/small_model_archive.json
+validation_results/real_model_training/
+validation_results/training_evolution_self/checkpoints/
 
 # Web interface (not needed for release)
 web/
+
+# Large files - model cache and checkpoints
+cache/
