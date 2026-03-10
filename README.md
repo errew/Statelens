@@ -92,7 +92,7 @@ statelens/
 ### Requirements
 
 ```bash
-pip install torch transformers numpy scipy matplotlib
+pip install torch>=2.0 transformers>=4.30 numpy scipy matplotlib
 ```
 
 ### Run Experiments
@@ -104,6 +104,38 @@ python scripts/attention_temperature_enhanced_v1.py
 # Example: Jacobian spectrum analysis
 python scripts/full_block_jacobian_spectrum_test.py
 ```
+
+## Scripts Documentation
+
+### Core Experiments
+
+| Script | Function | Output |
+|:-------|:---------|:-------|
+| `full_block_jacobian_spectrum_test.py` | Compute Jacobian spectral radius for Transformer blocks | `layer2_jacobian_spectral_analysis.json` |
+| `attention_temperature_enhanced_v1.py` | Temperature modulation experiment (τ = τ_min + C/β) | `enhanced_temperature_*.json` |
+| `calculate_si_all_models.py` | Calculate Stability Index (SI) for all models | SI metrics per layer |
+
+### Validation Experiments
+
+| Script | Function | Output |
+|:-------|:---------|:-------|
+| `band_sensitivity_analysis.py` | K-θ monotonicity validation across K bands | `k_star_validation_summary.json` |
+| `tau_profile_likelihood.py` | Profile likelihood analysis for τ estimation | `profile_likelihood_summary.json` |
+| `decisive_random_subspace_experiment.py` | Causal validation: alignment collapse test | `decisive_experiment_results.json` |
+
+### Control Experiments
+
+| Script | Function | Output |
+|:-------|:---------|:-------|
+| `pre_residual_control_experiment.py` | Pre/Post residual measurement control | `pre_residual_control.json` |
+| `negative_control_experiment.py` | W_gate vs W_down perturbation control | `negative_control_perturbation.json` |
+
+### Running Order (Recommended)
+
+1. **Jacobian Analysis** → `full_block_jacobian_spectrum_test.py`
+2. **Temperature Modulation** → `attention_temperature_enhanced_v1.py`
+3. **K-θ Validation** → `band_sensitivity_analysis.py`
+4. **Control Experiments** → `pre_residual_control_experiment.py`, `negative_control_experiment.py`
 
 ## Core Metrics
 
