@@ -51,6 +51,10 @@ We organize our empirical discoveries into a unified macroscopic framework:
 
 **Finding**: The Jacobian spectral radius of Transformer layers consistently evaluates to **λ ≈ 1.88 > 1** across multiple families at scale.
 
+![Multi-Model Jacobian Spectrum Analysis](../validation_results/figures/multi_model_full_block_jacobian.png)
+
+*Figure 1: Jacobian spectral radius across multiple models. All models exhibit λ ≈ 1.88 > 1, confirming the expansive nature of Transformer layers.*
+
 | Model | Architecture | λ (Spectral Radius) | Dynamical Regime |
 |:------|:-------------|:--------------------|:-----------------|
 | Qwen2.5-0.5B | GQA | 1.87 | Expansive |
@@ -65,6 +69,10 @@ We organize our empirical discoveries into a unified macroscopic framework:
 
 **Finding**: The alignment angle θ_k between the principal components of the MLP weights and the activation subspace strictly monotonically decreases with the principal dimension K.
 
+![K-θ Validation](../validation_results/figures/k_star_validation.png)
+
+*Figure 2: K-θ monotonicity law validation. The alignment angle decreases monotonically with K, following the exponential saturation curve.*
+
 **Mathematical Formulation**:
 ```
 cos(θ_k) = c_0 + c_1(1 - e^(-k/τ))
@@ -76,11 +84,19 @@ Where τ is the characteristic **mixing time**, quantifying how rapidly the acti
 
 **Finding**: The mixing time τ follows a precise inverse-temperature physical law, yielding a major discovery regarding the limits of specific attention architectures.
 
+![Cross-Architecture Temperature Analysis](../validation_results/figures/cross_architecture_temperature_analysis.png)
+
+*Figure 3: Temperature modulation across different attention architectures. MHA shows strong response (C ≈ 27), GQA shows moderate response (C ≈ 4), while MQA shows near-zero response (C ≈ 0).*
+
 | Architecture | Representative Model | τ_min | Constant C | R² | Modulation Capacity |
 |:-------------|:---------------------|:------|:-----------|:---|:--------------------|
 | MHA | phi-2 | 26.80 | 27.17 | 0.950 | ✅ Strong |
 | GQA | Qwen2.5-1.5B | 43.46 | 4.27 | 0.527 | ✅ Moderate |
 | MQA | gemma-2b | 41.67 | ≈0 | -0.16 | ❌ None |
+
+![Entropy vs Temperature](../validation_results/figures/entropy_vs_temperature.png)
+
+*Figure 4: Entropy-temperature relationship across architectures, showing the geometric basis for temperature modulation capacity.*
 
 **The Isotropic Geometric Trap in MQA**:
 Our most surprising finding is that MQA architectures (e.g., Gemma-2b) exhibit near-zero temperature responsiveness (C ≈ 0). Cross-validation with geometric analysis reveals that MQA operates in an **isotropic representational geometry** (mean angle θ_min ≈ 71.85°). Without a dominant directional gradient in the attention space, the global temperature scalar β loses its structural mechanism to compress or expand the manifold.
@@ -88,6 +104,10 @@ Our most surprising finding is that MQA architectures (e.g., Gemma-2b) exhibit n
 ### 2.4 SI Classification: Continuous Spectrum (No Phase Transitions)
 
 **Finding**: By mapping the Stability Index (SI) across depth, we categorize representation states not into discrete phases, but across a continuous topological spectrum.
+
+![Spectral Energy Comparison](../validation_results/figures/spectral_energy_comparison.png)
+
+*Figure 5: Spectral energy distribution across layers, showing the continuous transition from LP to SP to OSC regimes.*
 
 | Regime | SI Bound | Dynamical Characteristics |
 |:-------|:---------|:--------------------------|
