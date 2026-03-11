@@ -170,18 +170,18 @@ MIT License
 
 ---
 
-**Three-Axiom Framework**:
+**Three-Principle Framework**:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  AXIOM 1: Attention Determines Mixing Modes                 │
+│  PRINCIPLE 1: Attention Determines Mixing Modes             │
 │  → Temperature β controls mixing time τ = τ_min + C/β      │
 ├─────────────────────────────────────────────────────────────┤
-│  AXIOM 2: Embedding Determines Observable Modes             │
+│  PRINCIPLE 2: Embedding Determines Observable Modes         │
 │  → Expansion constant λ ≈ 1.7-1.8 (Layer 2) defines growth  │
 │  → K-θ monotonicity law governs geometric alignment         │
 ├─────────────────────────────────────────────────────────────┤
-│  AXIOM 3: Logits Reflect Filtered Dynamics                  │
+│  PRINCIPLE 3: Logits Reflect Filtered Dynamics              │
 │  → Final output is low-dimensional projection after L layers│
 └─────────────────────────────────────────────────────────────┘
 ```
