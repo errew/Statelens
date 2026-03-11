@@ -222,6 +222,6 @@ If you find this theoretical framework or the empirical datasets useful in your 
   author={StateLens Project},
   year={2026},
   publisher={Zenodo},
-  doi={10.5281/zenodo.xxxxx}
+  doi={10.5281/zenodo.18948375}
 }
 ```
