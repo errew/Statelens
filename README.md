@@ -2,6 +2,8 @@
 
 **[中文版 (Chinese Version)](README_CN.md)**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18948375.svg)](https://doi.org/10.5281/zenodo.18948375)
+
 > **Attention determines mixing modes, embedding determines observable modes, logits reflect filtered dynamics.**
 
 ## Overview
@@ -50,7 +52,9 @@ This repository contains the experimental data and analysis code for our compreh
 statelens/
 ├── docs/
 │   ├── The_Transformer_Expansion_System.md      # Paper (English)
-│   └── The_Transformer_Expansion_System_CN.md   # Paper (Chinese)
+│   ├── The_Transformer_Expansion_System.pdf     # Paper PDF (English)
+│   ├── The_Transformer_Expansion_System_CN.md   # Paper (Chinese)
+│   └── The_Transformer_Expansion_System_CN.pdf  # Paper PDF (Chinese)
 ├── scripts/
 │   ├── attention_temperature_enhanced_v1.py     # Temperature experiment
 │   ├── full_block_jacobian_spectrum_test.py     # Jacobian analysis
@@ -156,7 +160,7 @@ If you use this data or code, please cite:
   author={StateLens Project},
   year={2026},
   publisher={Zenodo},
-  doi={10.5281/zenodo.xxxxx}
+  doi={10.5281/zenodo.18948375}
 }
 ```
 
