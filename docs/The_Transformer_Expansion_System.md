@@ -4,7 +4,7 @@
 
 We present a comprehensive empirical framework governing the internal dynamics of Transformer-based large language models (LLMs). Through a systematic analysis of over 20 models across diverse architectures, we establish three fundamental physical laws of deep representations: (1) Transformer layers operate as **expansive dynamical systems** characterized by a universal spectral radius **Layer 2 λ ≈ 1.7-1.8 > 1**, fundamentally challenging the conventional assumption of contractive representation learning; (2) The geometric alignment between MLP weight principal directions and activation space principal components follows a rigorous **K-θ monotonicity law**, providing a unified geometric mechanism for manifold evolution; (3) The attention temperature β modulates the mixing time τ via the temperature-dependent equation **τ = τ_min + C/β**, which is strictly bounded by the underlying attention architecture.
 
-Crucially, we reveal that while Multi-Head Attention (MHA) exhibits strong temperature responsiveness, Multi-Query Attention (MQA) demonstrates near-zero modulation capacity (C ≈ 0) due to its isotropic geometric nature. These phenomena are seamlessly unified under our proposed three-axiom framework: **Attention determines mixing modes, embedding determines observable modes, and logits reflect filtered dynamics.** Furthermore, we demonstrate that the representational evolution (Stability Index, SI) undergoes a smooth continuous crossover (LP → SP → OSC) rather than discrete phase transitions, distinguishing deep language models from traditional thermodynamic systems.
+Crucially, we reveal that while Multi-Head Attention (MHA) exhibits strong temperature responsiveness, Multi-Query Attention (MQA) demonstrates near-zero modulation capacity (C ≈ 0) due to its isotropic geometric nature. These phenomena are seamlessly unified under our proposed three-principle framework: **Attention determines mixing modes, embedding determines observable modes, and logits reflect filtered dynamics.** Furthermore, we demonstrate that the representational evolution (Stability Index, SI) undergoes a smooth continuous crossover (LP → SP → OSC) rather than discrete phase transitions, distinguishing deep language models from traditional thermodynamic systems.
 
 ---
 
@@ -26,20 +26,20 @@ Through extensive experimental physics applied to the hidden state dynamics of o
 
 4. **Architecture-Dependent Thermodynamics:** We discover a profound asymmetry in temperature modulation capacity across MHA, GQA, and MQA architectures.
 
-### 1.3 The Three-Axiom Framework
+### 1.3 The Three-Principle Framework
 
 We organize our empirical discoveries into a unified macroscopic framework:
 
-> **AXIOM 1: Attention Determines Mixing Modes**
+> **PRINCIPLE 1: Attention Determines Mixing Modes**
 > - Temperature β acts as a dynamics control, scaling the geometric mixing time via τ = τ_min + C/β.
 > - Attention architecture strictly bounds this response strength.
 >
-> **AXIOM 2: Embedding Determines Observable Modes**
+> **PRINCIPLE 2: Embedding Determines Observable Modes**
 > - The universal expansion constant Layer 2 λ ≈ 1.7-1.8 defines the representational volumetric growth.
 > - The K-θ monotonicity law strictly governs cross-layer geometric alignment.
 > - The Stability Index (SI) spectrum reveals a continuous crossover (LP → SP → OSC).
 >
-> **AXIOM 3: Logits Reflect Filtered Dynamics**
+> **PRINCIPLE 3: Logits Reflect Filtered Dynamics**
 > - The final output vector is a low-dimensional filtered projection after L consecutive layers of expansive alignment.
 > - Different architectures exhibit distinct terminal filtering characteristics.
 
