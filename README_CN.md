@@ -2,6 +2,8 @@
 
 **[English Version](README.md)**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18948375.svg)](https://doi.org/10.5281/zenodo.18948375)
+
 > **注意力决定混合模式，嵌入决定可观测模式，Logits 反映过滤后的动力学。**
 
 ## 概述
@@ -50,7 +52,9 @@
 statelens/
 ├── docs/
 │   ├── The_Transformer_Expansion_System.md      # 论文（英文）
-│   └── The_Transformer_Expansion_System_CN.md   # 论文（中文）
+│   ├── The_Transformer_Expansion_System.pdf     # 论文 PDF（英文）
+│   ├── The_Transformer_Expansion_System_CN.md   # 论文（中文）
+│   └── The_Transformer_Expansion_System_CN.pdf  # 论文 PDF（中文）
 ├── scripts/
 │   ├── attention_temperature_enhanced_v1.py     # 温度实验
 │   ├── full_block_jacobian_spectrum_test.py     # Jacobian 分析
@@ -156,7 +160,7 @@ python scripts/full_block_jacobian_spectrum_test.py
   author={StateLens Project},
   year={2026},
   publisher={Zenodo},
-  doi={10.5281/zenodo.xxxxx}
+  doi={10.5281/zenodo.18948375}
 }
 ```
 
