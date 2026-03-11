@@ -224,6 +224,6 @@ $$h_{l+1} = \text{LayerNorm}(W_l \cdot h_l + \text{Attention}(h_l))$$
   author={StateLens Project},
   year={2026},
   publisher={Zenodo},
-  doi={10.5281/zenodo.xxxxx}
+  doi={10.5281/zenodo.18948375}
 }
 ```
