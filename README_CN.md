@@ -1,8 +1,8 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18948375.svg)](https://doi.org/10.5281/zenodo.18948375)
+
 # StateLens: Transformer 扩张系统
 
 **[English Version](README.md)**
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18948375.svg)](https://doi.org/10.5281/zenodo.18948375)
 
 > **注意力决定混合模式，嵌入决定可观测模式，Logits 反映过滤后的动力学。**
 
@@ -62,8 +62,9 @@ statelens/
 │   ├── band_sensitivity_analysis.py             # 敏感性分析
 │   ├── pre_residual_control_experiment.py       # 负对照实验
 │   ├── negative_control_experiment.py           # 负对照实验
-│   ├── decisive_random_subspace_experiment.py   # 决定性实验
-│   └── tau_profile_likelihood.py                # 似然分析
+│   ├── decisive_random_subspace_experiment.py   # 因果验证
+│   ├── tau_profile_likelihood.py                # 似然分析
+│   └── common_utils.py                          # 公共工具模块
 ├── validation_results/
 │   ├── figures/                                # 可视化图表
 │   │   ├── layer2_spectral_radius_analysis.png
@@ -167,6 +168,11 @@ python scripts/full_block_jacobian_spectrum_test.py
 ## 许可证
 
 MIT License
+
+## 联系方式
+
+- 问题反馈：[GitHub Issues](https://github.com/errew/Statelens/issues)
+- 讨论：[GitHub Discussions](https://github.com/errew/Statelens/discussions)
 
 ---
 
