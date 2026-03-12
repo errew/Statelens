@@ -1,8 +1,8 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18948375.svg)](https://doi.org/10.5281/zenodo.18948375)
+
 # StateLens: The Transformer Expansion System
 
 **[中文版 (Chinese Version)](README_CN.md)**
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18948375.svg)](https://doi.org/10.5281/zenodo.18948375)
 
 > **Attention determines mixing modes, embedding determines observable modes, logits reflect filtered dynamics.**
 
@@ -63,7 +63,8 @@ statelens/
 │   ├── pre_residual_control_experiment.py       # Negative control
 │   ├── negative_control_experiment.py           # Negative control
 │   ├── decisive_random_subspace_experiment.py   # Causal validation
-│   └── tau_profile_likelihood.py                # Likelihood analysis
+│   ├── tau_profile_likelihood.py                # Likelihood analysis
+│   └── common_utils.py                          # Common utilities
 ├── validation_results/
 │   ├── figures/                                # Visualization figures
 │   │   ├── layer2_spectral_radius_analysis.png
@@ -167,6 +168,11 @@ If you use this data or code, please cite:
 ## License
 
 MIT License
+
+## Contact
+
+- Issues: [GitHub Issues](https://github.com/errew/Statelens/issues)
+- Discussions: [GitHub Discussions](https://github.com/errew/Statelens/discussions)
 
 ---
 
