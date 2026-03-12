@@ -64,6 +64,7 @@ statelens/
 │   ├── negative_control_experiment.py           # 负对照实验
 │   ├── decisive_random_subspace_experiment.py   # 因果验证
 │   ├── tau_profile_likelihood.py                # 似然分析
+│   ├── analyze_k_star.py                        # K* 分析
 │   └── common_utils.py                          # 公共工具模块
 ├── validation_results/
 │   ├── figures/                                # 可视化图表
