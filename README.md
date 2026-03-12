@@ -64,6 +64,7 @@ statelens/
 │   ├── negative_control_experiment.py           # Negative control
 │   ├── decisive_random_subspace_experiment.py   # Causal validation
 │   ├── tau_profile_likelihood.py                # Likelihood analysis
+│   ├── analyze_k_star.py                        # K* analysis
 │   └── common_utils.py                          # Common utilities
 ├── validation_results/
 │   ├── figures/                                # Visualization figures
